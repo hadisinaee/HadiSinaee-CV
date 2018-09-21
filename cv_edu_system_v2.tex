@@ -1,0 +1,380 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' casual (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=.80,top=1cm,bottom=2.1cm]{geometry}
+% \RequirePackage[left=2.3cm,top=1cm,bottom=2cm,nohead,nofoot]{geometry}
+\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% hyperlink setup
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=grey,
+    urlcolor=grey,
+}
+
+\usepackage{tikz}
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+    
+% \usepackage{fontawesome}
+% \usepackage[hidelinks]{hyperref}
+    
+\usepackage{import}
+
+% personal data
+% \name{Hadi}{Sinaee}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+% \address{No. 10, Seyedi DeadEnd, Habib-Zadegan St., Azadi Ave., Tehran, Iran }{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{+98 913000 0963}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{sinaee@ce.sharif.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{ce.sharif.edu/\textasciitilde sinaee}                         % optional, remove / comment the line if not wanted
+% \extrainfo{17 April 1991}                 % optional, remove / comment the line if not wanted
+% \photo[64pt][.4pt]{logo.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{“Perseverance is not a long race; it is many short races one after another.” Walter Elliott}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\usepackage{fontspec}
+\fontspec [ Path = b/]  { }
+% \setmainfont[Ligatures=TeX]{unicode.garamond.ttf}
+\setmainfont[
+ BoldFont={Charter Bold}, 
+ ItalicFont={Charter Italic},
+%  BoldItalicFont={CAMBRIAI}
+ ]{CharterBTRoman}
+
+\usepackage{fontawesome}
+
+% \usepackage[T1]{fontenc}
+
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\def\mediumSpace{1.1em}
+\def\shortSpace{.6em}
+
+% \makecvtitle
+% \setlength{\parskip}{.5em}
+{\color{black} \Huge Hadi Sinaee |} 
+\faGlobe \space \href{ce.sharif.ir/~sinaee}{ce.sharif.ir/\textasciitilde sinaee} \hfill \faEnvelope \space \href{mailto:sinaee@ce.sharif.ir?Subject=Hello Hadi!}{sinaee@ce.sharif.ir} 
+\newline
+\newline
+\section{Research Interest}
+Data Intensive Systems, Intersection of Machine Learning and System, Scalable Machine Learning
+% \begin{itemize}
+
+% \item{Distributed/Scalable Machine Learning}
+% \item{Deep Reinforcement Learning}
+% \item{Data Intensive Systems 
+%  \begin{itemize}
+%      \item Intersection of Machine Learning and System 
+%      \item Data and Stream Processing System
+%  \end{itemize}
+%  }
+
+% \end{itemize}
+
+\section{Education}
+
+
+% \subsection{Academic Qualifications}
+
+\begin{itemize} \itemsep \mediumSpace
+
+\item{
+\cventry{2013--2016}
+{Master of Professional in Artificial Intelligence}
+{\href{http://www.en.sharif.edu/}{Sharif University of Technology \ExternalLink}}
+{Tehran, Iran}
+{GPA: 15.09/20}
+{
+\textit{Seminar Project:} Deep Learning for Human Behaviour Modelling in Smart Homes, supervised by Dr. Mahdieh Soleimani Baghshah\\
+\textit{Related Courses:} Digital Signal Processing(17.1/20), Machine Vision(16.8/20), Neural Networks(19.1/20), Scalable Machine Learning(20/20), Machine Learning(15.1/20)
+}
+}
+
+\item{
+\cventry{2009--2013}
+{B.Eng Software Engineering}
+{\href{https://kashanu.ac.ir/en}{University of Kashan \ExternalLink}}
+{Kashan, Iran}
+{Ranked $1^{st}$, GPA: 17.12/20}
+{
+\textit{Thesis:} An Application of Content Based Image Retrieval in Augmented Reality, supervised by Dr. Hossein Ebramhimpour. \\
+\textit{Related Courses: Computer Simulation (19.80/20 grad.), Digital Image Processing(20/20 grad.), Information Storage and Retrieval(18.80/20), Theory of Automata and Languages(18.10/20), Data Structures(19.5/20), Algorithms Design(17.25/20), Software Engineering I(18/20), Software Engineering II(17.5/20), Computer Systems Architecture(19.25/20), Computer Networks(18/20)}
+}
+}  % arguments 3 to 6 can be left empty
+\end{itemize}
+
+\section{Publications}
+\begin{itemize} \itemsep \mediumSpace
+
+\item{
+\textbf{Book | C\# Programming}, by Rob Miles. Translated by: Dr. Salman Goli Bidgoli, Rasoul Mohammadi, \textbf{Hadi Sinaee}, 2012, ISBN: 978-600-93248-0-4. (This book has been taught for Advanced Programming course at University of Kashan)
+}
+
+\end{itemize}
+
+\section{Honers \& Awards}
+\begin{itemize} \itemsep \shortSpace
+\item Won \textit{"Best Mobile Application of the Year"} award out of more than 4,500 mobile applications from \textit{Iran Web and Mobile Festival(IWMF-1396)} for \textit{HodHod}, an instant messaging application, 2016-2017.
+
+\item Won \textit{"Best Mobile Application of the Year"} award from \textit{Cafebazaar}, the largest android application marketplace in Iran, out of 50,000 mobile applications for \textit{HodHod}, an instant messaging application, 2015-2016.
+
+\item More than 60,000 Daily Active Users, sending more than half a million messages per day and more than 150Million Rials per month revenue at our instant messaging platform, HodHod.
+
+\item Ranked $15^{th}$ in \textit{National Undergraduate Computer Engineering Olympiad}, 2013.
+
+\item Ranked $1^{st}$ B.Sc. students in Software Engineering, Department of Electrical and Computer Engineering, University of Kashan, 2013.
+
+% \item Ranked $13^{th}$ in \textit{Khawrazmi Robotic Competition}, national graduate  robotic competition in miner robot section, 2008-2009.
+\end{itemize}
+
+% \section{Memberships}
+% \begin{itemize}
+
+% \item \textbf{Society of Exceptional Talents:} I allowed being a double major student during my bachelor degree.
+
+
+% \item \textbf{Isfahan Mathematics House:} from 2006 to 2009 working on Combinatorial Games.
+
+
+% \item \textbf{IEEE: }Student membership of IEEE at Sharif University of Technology branch for one year.
+
+% \end{itemize}
+
+\section{Research \& Industry Experience}
+
+\vspace{6pt}
+
+\begin{itemize} \itemsep \mediumSpace
+
+\item{\cventry{July 2018--Present}{Product Owner}{\href{https://www.linkedin.com/company/ostadkar-ir/}{Ostadkar.pro | The Largest Online Platform For Home Services in Iran \ExternalLink}}{Tehran}{}{
+\textit{Activities:} Business plan development and executive manager of a project at Ostadkar.pro in the beauty industry.
+}}
+
+\item{\cventry{2017-- Jul, 2018}{Co-founder | CTO \& Vice Chairman}{\href{https://cafebazaar.ir/app/ir.digitaldreams.hodhod/?l=en}{HodHod | Instant Messaging Startup \ExternalLink}}{\href{http://sati.sharif.ir/dc?c=ABOUT_EN}{Sharif Advanced Technology Center Incubator \ExternalLink}}{}{
+\textit{Activities:} Designing Software Architecture, Product Management, Product Strategy \\
+\textit{Tech. Stack:} Golang, gRPC, JWT, Redis, OpenTracing, MTProto
+}}
+
+\item{\cventry{2015--2017}{Co-founder | Managing Director}{\href{https://cafebazaar.ir/app/ir.digitaldreams.hodhod/?l=en}{HodHod | Instant Messaging Startup \ExternalLink}}{\href{http://setak.sharif.ir/en/home/}{Sharif University Accelerator \ExternalLink}}{}{
+\textit{Activities:} Team Building, Product Management, Software Architecture Designing  \\
+\textit{Tech. Stack:} NodeJS, ExpressJS, Python, MongoDB, MYSQL, JWT, SCRUM
+}}
+
+\item{\cventry{August 2015--January 2016}{Data Scientist}{\href{https://miras-tech.com/}{Miras Technologies | Big Data Platform Startup \ExternalLink}}{MAPS Accelerator}{}{
+\textit{Activities:} Creating machine learning models for different range of applications including air pollution prediction, customer clustering and general information retrieval systems \\
+\textit{Tech. Stack:} Python, ELK, Kubernetes, Docker, SCRUM
+}}
+
+\item{\cventry{2015--2016}{Research Assistant}{\href{http://mll.ce.sharif.edu/}{Machine Learning Lab \ExternalLink}}{Sharif University of Technology}{}{
+\textit{Activities:}Working on applying Deep Learning on sensory data for human behavior prediction.
+}}
+
+% \item{\cventry{2013--2014}{Research Assistant}{Image Processing and Computer Vision Lab}{University of Kashan}{}{
+% % \vspace{2.5pt}
+% \textit{Activities:}  Working on object detection and augmented reality. Also real-time object tracking in videos.
+% }}
+
+\end{itemize}
+
+\section{Research \& Industrial Projects}
+\begin{itemize} \itemsep \shortSpace
+\item{ \textbf{GitHub | } \href{https://github.com/hadisinaee/pz}{Prettier Zap \ExternalLink}: \textit{'Beautify And Query Zap Logger Outputs'}
+
+\item{ \textbf{GitHub | } \href{https://github.com/hadisinaee/system-design-primer/blob/persian-translation/README-fa.md}{System Design Premiere Translation \ExternalLink}
+}
+
+\item{ \textbf{HodHod |}An instant messaging platform for sending data in real-time
+
+\item{ \textbf{HodHod |}Advertisement and Payment Platform For HodHod
+
+\item{ \textbf{M.Sc |}Diabetic Retinopathy Detection on Kaggle Using CNN
+
+% \item{ \textbf{M.Sc |}An Image Retrieval Engine Using Texture Analysis Using Gabor Filters
+
+\item{ \textbf{M.Sc |}Persian Voice Recognition for Numbers Using HMM with HTK Lib
+
+\item{ \textbf{M.Sc |}Persian Name Entity Recognition Using CRF
+
+\item{\textbf{B.Sc |}Scar Progress Detection With Image Processing Using Matlab 
+
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize} \itemsep \shortSpace
+\item \textbf{Programming:} Golang, JS, Python
+% \vspace{\shortSpace}
+
+\item \textbf{Distributed/Big Data:} Docker, Apache Drill(limited experience), Apache Kafka(limited experience), OpenTracing, Jeagar, NATS, gRPC, protobuf
+% \vspace{\shortSpace}
+
+\item \textbf{Databases:} Sqlite, MYSQL, MongoDB, Redis
+% \vspace{\shortSpace}
+
+\item \textbf{Libraries:} OpenCV, Numpy, Scipy, Theano, pySpark, Scikit-Learn(limited experience)
+% \vspace{\shortSpace}
+
+\item \textbf{Frameworks:} NodeJS, Express, Mocha, Jest, SocketIO, Django
+% \vspace{\shortSpace}
+
+\item \textbf{Software Engineering:} Scrum Methodology, Product Management, Growth Planning, Leadership
+
+\end{itemize}
+
+\section{Workshops \& Talks}
+\begin{itemize} \itemsep \shortSpace
+    \item Effective Team Communication \hfill \href{https://www.linkedin.com/company/bana-talent-accelerator/}{
+    \textbf{BANA Talent Accelerator} \ExternalLink}; Jun. 2018}
+    
+    \item A Quick Guide to Scrum \hfill \textbf{Sharif University Accelerator}; Jul. 2016 \& 2017
+    
+    \item RBM From Scratch \hfill  \textbf{Sharif University of Technology}; May. 2015
+    
+    \item Distinctive Image Features From Scale Invariant Key-Point \hfill  \textbf{Sharif University of Technology}; May. 2014
+    
+    \item Introduction To HodHod Messenger \hfill  \textbf{Channel 1, National TV}; Nov. 2015
+    
+    \item Interview About Startup Ecosystem In Iran \hfill  \textbf{Channel 4, National TV}; Nov. 2016
+    
+    \item Teaching Assistant(over 1000 hours teaching experience) \\ 
+     \textit{Introduction to Python Programming, Design And Analysis of Algorithms, Artificial Intelligence, Data Structures, Digital Logic Circuits, Discrete Mathematics.}
+    
+    
+\end{itemize}
+
+\section{Service \& Leadership}
+\begin{itemize} \itemsep \shortSpace
+    \item Technical Member of Startup Admission Committee at Sharif University Accelerator.
+    
+    \item Mentor at BANA Talent Accelerator. 
+\end{itemize}
+
+
+% \begin{itemize} \itemsep \shortSpace 
+% \item{\cventry{Jun. 2018}
+% {how to apply effective communication skills in our team. }
+% {Effective Team Communication} {\href{https://www.linkedin.com/company/bana-talent-accelerator/}{BANA Talent Accelerator \ExternalLink}}{}{}
+% }
+
+% \item{\cventry{Jul. 2016 \& 2017}
+% {a quick introduction to SCRUM and how to set it up in our team.}
+% {A Quick Guide to Scrum}
+% {Sharif University Accelerator}
+% {}{}
+% }
+
+% \item{\cventry{May. 2015}
+% {an introduction to Restricted Boltzmann Machines.}
+% {RBM From Scratch} 
+% {Sharif University of Technology}
+% {}{}
+% }
+
+% \item{\cventry{May. 2014}
+% {an introduction to SIFT algorithm for object detection.}
+% {Distinctive Image Features From Scale Invariant Key-Point} 
+% {Sharif University of Technology}
+% {}{}
+% }
+
+% \item{\cventry{Nov. 2015}
+% {selected as the best startup idea for 626 TV show.}
+% {Introduction To HodHod, An Instant Messaging Application} 
+% {Channel 1, National TV }
+% {}{}
+% }
+
+% \item{\cventry{2016}
+% {selected as the best startup idea for 626 TV show.}
+% {Interview About Startup Ecosystem In Iran} 
+% {Channel 4, National TV }
+% {}{}
+% }
+
+% \item{\cventry{}
+% {I have over 1000 hours teaching experience for the following courses}
+% {Teaching Assistant} 
+% {}
+% {}{}
+% }
+
+% \end{itemize}
+
+% \textbf{Mentor}
+% \begin{itemize}
+% \item "Start up Mentor" @ \href{https://www.linkedin.com/company/bana-talent-accelerator/}{BANA Accelerator \ExternalLink} (since June 2018-present)
+% \item "Member of Application Review Committee" @ \href{http://setak.sharif.ir/en/home/}{Sharif University Accelerator \ExternalLink} (2017 - June 2018)
+% \item "Peer Advisor" @ \href{http://setak.sharif.ir/en/home/}{Sharif University Accelerator \ExternalLink} (4 months)
+% \item "Start up Mentor" @ Startup Trigger Event (4 events)
+% \end{itemize}
+
+% \textbf{Teaching Assistant} (I have over 1500 hours teaching experience for the following courses)
+
+% \begin{itemize}
+
+% \item Introduction to Python Programming, Design And Analysis of Algorithms, Artificial Intelligence, Data Structures, Digital Logic Circuits, Discrete Mathematics
+% \end{itemize}
+
+% \section{Online Certifications}
+% \begin{itemize}
+% \item{\textbf{Courera:} \textit{Discrete Inference and Learning in Artificial Vision}}
+% \item{\textbf{NovoEd:} \textit{Technology Entrepreneurship}}, \textit{Creativity: Musics to My Ear}}
+% \item{\textbf{Edx:} \textit{Big Data with Apache Spark}}, \textit{Honor Code Certificate for Introduction to MongoDB using the MEAN Stack}
+% \end{itemize}
+\end{document}
+
+
+%% end of file `template.tex'.
